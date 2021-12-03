@@ -1,16 +1,11 @@
-#main {
-  transition: margin-left 0,5s;
-  }
-
 .button {
     background-color:white; 
     border: 2px solid #4CAF50;
     color: black;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -21,41 +16,97 @@
     color: white;
 }
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  overflow-x: hidden;
 }
-  
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+
+main {
+  padding: 40px 25px;
+  transition: .5s ease-in-out;
+  width: 100%;
 }
-  
-.sidenav a:hover {
-    color: #f1f1f1;
+
+nav {
+  background: rgb(53, 53, 53);
+  bottom: 0;
+  box-shadow: 0 0 5px #666;
+  height: 100%;
+  left: -17.5rem;
+  padding-top: 38px;
+  position: absolute;
+  top: 0;
+  transition: .5s ease-in-out;
+  width: 17rem;
+  user-select: none;
 }
-  
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+
+nav a {
+  color: #eee;
+  display: block;
+  padding: 12px 16px;
+  transition: .5s;
+  text-decoration: none;
+  -webkit-user-drag: none;
 }
-  
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+
+nav a:hover {
+  background-color: #39c;
+}
+
+#nav-collapse {
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#nav-expand {
+  background-color: #333;
+  color: #eee;
+  display: block;
+  left: 0;
+  top: 0;
+  padding: 8px 12px;
+  position: absolute;
+  text-decoration: none;  
+  transition: .5s linear;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#nav-expand:focus {
+  opacity: 0;
+}
+
+#nav-expand:focus ~ main {
+  margin-left: 17rem;
+  transition-delay: .25s;
+}
+
+#nav-expand:focus ~ nav {
+  left: 0;
+  transition-delay: .25s;
+}
+
+#nav-expand:hover {
+  background-color: #369;
+  color: #fff;
+}
+
+.icon {
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 12px;
+  width: 12px;
+}
+
+.icon-cross {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAABHNCSVQICAgIfAhkiAAAAPdJREFUGJV1jz9LhWAYxc+9rVZDQ+DcEI0NLU19gxr6Ci3tuvjnA+gggSBt4qzzO90b5FBubkHgEM1CBL5K93Ia8jWv4G88/A7PeQAArusekXwRQpiGYSzQ4/v+Gcn3OI6vMRJf+cdWFXrxs8+bOI5vkCTJLckf/rMtiuJhJJIk67oWAIA0Te8mhR2klGvbtg/UvNlC27ZPSlwquaqqZwA1dmGe56uu676HxPO8U5IfMyuGp+fEt+nTQghzqWnaMYBDdUVKuXYc5yLLsnsAmz5e6Lp+AgCIouiK5FfTNCvLsvanT5dl+Wia5t6wOwiC87GoCMPwUom/I2EVwEqOzwUAAAAASUVORK5CYII=');
+}
+
+.icon-menu {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAB5JREFUKJFj/P///38GEgATKYoHKWAc9TQRgGRPAwD0IAv+FT8LPwAAAABJRU5ErkJggg==');
 }

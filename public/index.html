@@ -8,18 +8,21 @@
 </head>
 
 <header>
-    <script src="scripts.js"></script>
-    <div class="teste">
-        <span onclick="openNav()">OPEN</span>
-    </div>
-    <h4>Atividade 4</h4>
+    <script src="scripts.js"></script>    
 </header>
 
 <!-- <body style="background-image: url('https://c.tenor.com/MCtlzqgI2c8AAAAC/gargantua-interstellar.gif');background-repeat: no-repeat; background-size: 100% 130%; background-attachment: fixed;"> -->
 
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <a id="nav-expand" href="#">
+        <span class="icon icon-menu"></span>&nbsp;
+        Menu
+      </a>
+      <nav>
+        <a id="nav-collapse" href="#">
+          <span class="icon icon-cross"></span>
+        </a>
         <a href="#" ; onClick="
         parent.location='http://localhost:8080/sciencenews'">Science News</a>
         <a href="#" ; onClick="
@@ -28,10 +31,12 @@
         parent.location='http://localhost:8080/space-com'">Space.com</a>
         <a href="#" ; onClick="
         parent.location='http://localhost:8080/airspacemag'">AirSpaceMag</a>
-    </div>
-    <div class="main">
-        <h4>TESTE TESTE TESTE</h4>
-    </div>
+      </nav>
+      <main>
+        <h2>Atividade 4</h2>
+        <p>API de notícias relacioandas com o Espaço e o Universo<br></p>
+
+      </main>
 </body>
 
 </html>
