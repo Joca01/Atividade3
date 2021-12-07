@@ -1,42 +1,111 @@
 <html lang="en">
 
 <head>
-    <title>Atividade 3</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <!--     background-size:100%;
- -->
+  <title>Atividade 3</title>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <header>
-    <script src="scripts.js"></script>    
+
+  <!-- Trigger/Open The Modal -->
 </header>
 
 <!-- <body style="background-image: url('https://c.tenor.com/MCtlzqgI2c8AAAAC/gargantua-interstellar.gif');background-repeat: no-repeat; background-size: 100% 130%; background-attachment: fixed;"> -->
 
 <body>
 
-    <a id="nav-expand" href="#">
-        <span class="icon icon-menu"></span>&nbsp;
-        Menu
-      </a>
-      <nav>
-        <a id="nav-collapse" href="#">
-          <span class="icon icon-cross"></span>
-        </a>
-        <a href="#" ; onClick="
+  <a id="nav-expand" href="#">
+    <span class="icon icon-menu"></span>&nbsp;
+    Menu
+  </a>
+  <nav>
+    <a id="nav-collapse" href="#">
+      <span class="icon icon-cross"></span>
+    </a>
+    <a href="#" ; onClick="
         parent.location='http://localhost:8080/sciencenews'">Science News</a>
-        <a href="#" ; onClick="
+    <a href="#" ; onClick="
         parent.location='http://localhost:8080/astronomy-com'">Astronomy.com</a>
-        <a href="#" ; onClick="
+    <a href="#" ; onClick="
         parent.location='http://localhost:8080/space-com'">Space.com</a>
-        <a href="#" ; onClick="
+    <a href="#" ; onClick="
         parent.location='http://localhost:8080/airspacemag'">AirSpaceMag</a>
-      </nav>
-      <main>
-        <h2>Atividade 4</h2>
-        <p>API de notícias relacioandas com o Espaço e o Universo<br></p>
+  </nav>
+  <main>
+    <h2>Atividade 4</h2>
+    <p>API de notícias relacioandas com o Espaço e o Universo<br></p>
 
-      </main>
+  </main>
+
+  <button id="modalBtn" class="button" style="margin: 0px 150px;">Login</button>
+  <div id="simpleModal" class="modal">
+    <div class="modal-content" style="width: 70%; height: 70%;">
+      <div class="modal-header">
+        <h2>Efetue aqui o seu login</h2>
+        <span class="closeBtn">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form style="max-width: 480px; margin: auto">
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="emailAddress">Email address</label>
+            <input type="email" id="emailAddress" class="form-control" placeholder="Email Address" required autofocus>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password" required autocomplete>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <button id="modalBtn" class="button" style="margin: 0px 100px;">Registro</button>
+  <div id="simpleModal" class="modal">
+    <div class="modal-content" style="width: 70%; height: 70%;">
+      <div class="modal-header">
+        <h2>Efetue aqui o seu registro</h2>
+        <span class="closeBtn">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form style="max-width: 480px; margin: auto">
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="emailAddress">Email address</label>
+            <input type="email" id="emailAddress" class="form-control" placeholder="Email Address" required autofocus>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password" required autofocus>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="passwordVerification">Password</label>
+            <input type="password" id="passwordVerification" class="form-control" placeholder=" Confirm Password"
+              required autofocus>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 </body>
 
 </html>

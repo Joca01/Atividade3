@@ -110,3 +110,43 @@ nav a:hover {
 .icon-menu {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAB5JREFUKJFj/P///38GEgATKYoHKWAc9TQRgGRPAwD0IAv+FT8LPwAAAABJRU5ErkJggg==');
 }
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 10%; 
+  height: 10%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 10% auto; 
+  padding: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen; 
+  animation-duration: 1s;
+}
+
+/* The Close Button */
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.closeBtn:hover,.closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
