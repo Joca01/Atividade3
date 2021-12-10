@@ -1,8 +1,18 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { request, response } = require('express');
-const express = require("express");
+const express = require('express');
+const app = express();
 const router = express.Router();
+const bcrypt = require('bcrypt');
+
+const Datastore = require("nedb")
+const cookieParser = require("cookie-parser")
+const { createTokens, validateToken } = require("../JWT")
+
+let db = {}
+db.users = new Datastore("users.db");
+db.users.loadDatabase();
+app.use(cookieParser())
 
 //Array with the newspapers information
 const newspapersArray = [
@@ -160,6 +170,49 @@ router.get('/airspacemag', (req, res) => {
     res.json(contentArray4)
 })
 
+router.post("/register", (req, res) => {
+    const { username, password } = req.body;
+    const saltRounds = 10
+    bcrypt.genSalt(saltRounds, function (err, salt) {
+        bcrypt.hash(password, salt, function (err, hash) {
+            return new Promise((resolve, reject) => {
+                data = { username: username, password: hash };
+                db.users.insert(data, (err, dados) => {
+                    if (err) {
+                        reject(null);
+                    } else {
+                        res.json("User registred")
+                        resolve(dados);
+                    }
+                });
+            });
+        })
+    })
+});
+
+router.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+
+    await db.users.findOne({ username: req.body.username }, function (err, doc) {
+        if (!doc.username) res.status(400).json({ error: "User does no exist" })
+
+        bcrypt.compare(password, doc.password).then((match) => {
+            if (!match) {
+                res.status(403).json({ error: "Wrong username and password combination" })
+            } else {
+
+                const accessToken = createTokens(doc.username)
+
+                res.cookie("access-token", accessToken, {
+                    maxAge: 60 * 60 * 24 * 30 * 1000,
+                    httpOnly: true,
+                })
+
+                res.json("Logged in")
+            }
+        })
+    })
+})
 
 module.exports = router;
 
